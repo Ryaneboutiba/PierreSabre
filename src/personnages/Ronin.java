@@ -20,10 +20,10 @@ public class Ronin extends Humain {
 			int argentgagne;
 			parler("Je t'ai eu petit yakuza");
 			argentgagne=yaku.perdre();
-			attHoneur+=1;
+			attHoneur++;
 			gagnerArgent(argentgagne);
 		}else {
-			attHoneur-=1;
+			attHoneur--;
 			yaku.gagner(getQargent());
 			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse en ont pris un coup");
 		}

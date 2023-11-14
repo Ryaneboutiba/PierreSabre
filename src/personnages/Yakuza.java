@@ -27,7 +27,7 @@ public class Yakuza extends Humain {
 		int argentvoler;
 		argentvoler=victime.sefaireExtorquer();
 		gagnerArgent(argentvoler);
-		reputation+=1;
+		reputation++;
 		parler("J’ai piqué les "+ argentvoler +"  sous de Marco, ce qui me fait " + getQargent() +" sous dans ma poche. Hi ! Hi !");
 	}
 	
@@ -35,12 +35,19 @@ public class Yakuza extends Humain {
 		int argentperdu;
 		argentperdu=getQargent();
 		parler("J'ai perdu mon duel et mes "+argentperdu+" sous snif... J'ai desonhore l'honneur du clan "+ clan);
+		reputation--;
 		return argentperdu;
 	}
 	
 	public void gagner(int gain) {
-		reputation+=1;
+		reputation++;
 		gagnerArgent(gain);
 		parler("Ce ronin pensait vraiment pouvoir battre "+ getNom() + " du clan "+ clan+ " ? Je l'ai depouille de ses "+ gain+ " sous");
+	}
+	
+	@Override
+	public void direBonjour() {
+		super.direBonjour();
+		parler("Mon clan est "+clan);
 	}
 }
